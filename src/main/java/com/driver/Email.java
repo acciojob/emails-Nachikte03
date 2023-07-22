@@ -25,5 +25,20 @@ public class Email {
         // 3. It contains at least one lowercase letter
         // 4. It contains at least one digit
         // 5. It contains at least one special character. Any character apart from alphabets and digits is a special character
+        if(!oldPassword.equals(password))return;
+        if(newPassword.length()<8) return;
+        boolean isUpperCasePresent = false;
+        boolean isLowerCasePresent = false;
+        boolean isDigitPresent = false;
+        boolean isSpecialCharacterPresent = false;
+        for(char ch:newPassword.toCharArray()){
+            if(ch>='A' && ch<='Z')isUpperCasePresent = true;
+            else if(ch>='a' && ch<='z')isLowerCasePresent = true;
+            else if(ch>='0' && ch<='9')isDigitPresent = true;
+            else isSpecialCharacterPresent = true;
+        }
+        if(isLowerCasePresent && isUpperCasePresent && isDigitPresent && isSpecialCharacterPresent){
+            this.password = newPassword;
+        }
     }
 }
