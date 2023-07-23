@@ -2,7 +2,7 @@ package com.driver;
 
 import java.util.*;
 
-public class Gmail extends Email {
+public class git Gmail extends Email {
 
     int inboxCapacity; //maximum number of mails inbox can store
     //Inbox: Stores mails. Each mail has date (Date), sender (String), message (String). It is guaranteed that message is distinct for all mails.
@@ -67,7 +67,7 @@ public class Gmail extends Email {
     public String findLatestMessage(){
         // If the inbox is empty, return null
         // Else, return the message of the latest mail present in the inbox
-        if(!front.next.message.equals("1")){
+        if(front.next.next!=null){
             return front.next.message;
         }
         else{
@@ -78,7 +78,7 @@ public class Gmail extends Email {
     public String findOldestMessage(){
         // If the inbox is empty, return null
         // Else, return the message of the oldest mail present in the inbox
-        if(!rear.prev.message.equals("-1")){
+        if(rear.prev.prev!=null){
             return rear.prev.message;
         }
         else{

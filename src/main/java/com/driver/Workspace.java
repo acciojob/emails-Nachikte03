@@ -46,6 +46,7 @@ public class Workspace extends Gmail{
             LocalTime curr_start = calendar.get(i).getStartTime();
             LocalTime curr_end = calendar.get(i).getEndTime();
             if(curr_start.isAfter(prev_end)){
+                prev_end = curr_end;
                 count++;
             }
             else{
